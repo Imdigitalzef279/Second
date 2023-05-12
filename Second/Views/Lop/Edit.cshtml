@@ -1,0 +1,44 @@
+﻿@model Second.Models.Lop
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Lop</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="LoaiLop" class="control-label"></label>
+                <input asp-for="LoaiLop" class="form-control" />
+                <span asp-validation-for="LoaiLop" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SoGhe" class="control-label"></label>
+                <input asp-for="SoGhe" class="form-control" />
+                <span asp-validation-for="SoGhe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SoBan" class="control-label"></label>
+                <input asp-for="SoBan" class="form-control" />
+                <span asp-validation-for="SoBan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
